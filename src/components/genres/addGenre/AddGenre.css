@@ -1,0 +1,18 @@
+.segmentWrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.segmentContainer {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-row-gap: 15px;
+    grid-column-gap: 15px;
+}
+
+.active {
+    background-color: #6c757d;
+    color: #fff;
+}

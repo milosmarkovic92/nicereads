@@ -1,0 +1,66 @@
+[
+    {   
+        "id": 1,
+        "genre": "Action"
+    },
+    {   
+        "id": 2,
+        "genre": "Anthology"
+    },
+    {   
+        "id": 3,
+        "genre": "Comic"
+    },
+    {   
+        "id": 4,
+        "genre": "Crime"
+    },
+    {   
+        "id": 5,
+        "genre": "Drama"
+    },
+    {   
+        "id": 6,
+        "genre": "Fantasy"
+    },
+    {   
+        "id": 7,
+        "genre": "History"
+    },
+    {   
+        "id": 8,
+        "genre": "Horror"
+    },
+    {   
+        "id": 9,
+        "genre": "Mistery"
+    },
+    {   
+        "id": 10,
+        "genre": "Mythology"
+    },
+    {   
+        "id": 11,
+        "genre": "Poetry"
+    },
+    {   
+        "id": 12,
+        "genre": "Romance"
+    },
+    {   
+        "id": 13,
+        "genre": "Satire"
+    },
+    {   
+        "id": 14,
+        "genre": "Science"
+    },
+    {   
+        "id": 15,
+        "genre": "Thriller"
+    },
+    {   
+        "id": 16,
+        "genre": "Western"
+    }
+]

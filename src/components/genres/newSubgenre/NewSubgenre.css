@@ -1,0 +1,11 @@
+.newSegmentWrapper {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    margin: 12%;
+}
+
+.newSegmentContainer {
+    display: block;
+    width: 100%;
+}

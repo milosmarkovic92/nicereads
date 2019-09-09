@@ -1,0 +1,66 @@
+[
+    {
+        "id": 1,
+        "subgenre": "Art"
+    },
+    {
+        "id": 2,
+        "subgenre": "Autobiography"
+    },
+    {
+        "id": 3,
+        "subgenre": "Biography"
+    },
+    {
+        "id": 4,
+        "subgenre": "Diary"
+    },
+    {
+        "id": 5,
+        "subgenre": "Dictionary"
+    },
+    {
+        "id": 6,
+        "subgenre": "Encyclopedia"
+    },
+    {
+        "id": 7,
+        "subgenre": "Guide"
+    },
+    {
+        "id": 8,
+        "subgenre": "Health"
+    },
+    {
+        "id": 9,
+        "subgenre": "History"
+    },
+    {
+        "id": 10,
+        "subgenre": "Journal"
+    },
+    {
+        "id": 11,
+        "subgenre": "Religion"
+    },
+    {
+        "id": 12,
+        "subgenre": "Romance"
+    },
+    {
+        "id": 13,
+        "subgenre": "Science"
+    },
+    {
+        "id": 14,
+        "subgenre": "Travel"
+    },
+    {
+        "id": 15,
+        "subgenre": "True crime"
+    },
+    {
+        "id": 16,
+        "subgenre": "Add new"
+    }
+]
