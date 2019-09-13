@@ -1,15 +1,19 @@
 import React, { Component } from 'react';
 import { Button } from 'react-bootstrap';
 import './AddGenre.css';
-import genres from '../../../constants/genres.json';
+import genres from '../../../js/constants/genres.json';
 import { connect } from 'react-redux';
-import { addBook } from '../../../actions/booksActions';
 
+const mapStateToProps = state => {
+    return {
+        genre: state.genres
+    }
+}
 
 class AddGenre extends Component {
 
     render() {
-        const { genre, activeGenre } = this.props;
+        const { genre, activeGenre, step, nextStep, prevStep } = this.props;
 
         const genresList = genres.map(item =>
             <Button
@@ -26,9 +30,17 @@ class AddGenre extends Component {
                 <div className="segmentContainer">
                     {genresList}
                 </div>
+                <div className="prevNextHolder">
+                    {
+                        step === 1 ?
+                            <Button disabled variant="outline-secondary" className="btn btn-light pl-4 pr-4 pt-3 pb-3 mr-2 mt-4" onClick={prevStep}><i className="prevStep"></i>Back</Button> :
+                            <Button variant="outline-secondary" className="btn btn-light pl-4 pr-4 pt-3 pb-3 mr-2 mt-4" onClick={prevStep}><i className="prevStep"></i>Back</Button>
+                    }
+                    <Button variant="outline-secondary" className="btn btn-light pl-4 pr-4 pt-3 pb-3 ml-2 mt-4" onClick={nextStep}>Next<i className="nextStep"></i></Button>
+                </div>
             </div>
         )
     }
 }
 
-export default AddGenre;
+export default connect(mapStateToProps)(AddGenre);

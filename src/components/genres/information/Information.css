@@ -1,0 +1,12 @@
+.label {
+    color: #fff;
+    float: left;
+}
+
+.noresize {
+    resize: none;
+}
+
+#prevNextInfo {
+    margin-right: 110px;
+}

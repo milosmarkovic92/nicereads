@@ -1,28 +1,42 @@
 import React, { Component } from 'react';
-import { Button } from 'react-bootstrap';
 import GenresWrapper from './genres/GenresWrapper';
+import { connect } from 'react-redux';
+import { addGenre, addSubgenre } from '../js/actions/actions';
 import './MainContainer.css';
 
-export default class MainContainer extends Component {
+const mapDispatchToProps = dispatch => {
+    return {
+        addGenre: genres => dispatch(addGenre(genres)),
+        addSubgenre: subGenres => dispatch(addSubgenre(subGenres))
+    }
+}
+
+const mapStateToProps = state => {
+    return {
+        subGenre: state.subGenres
+    }
+}
+
+class MainContainer extends Component {
     constructor(props) {
         super(props);
         this.state = {
             step: 1,
             stepCheck: '',
-            genre: '',
-            subgenre: '',
-            activeGenre: '',
-            activeSubgenre: ''
+            subGenreTitle: '',
+            subGenreDescription: ''
         }
     }
 
-    nextStep = () => {
+    nextStep = (e) => {
+        e.preventDefault();
         this.setState({
             step: this.state.step + 1
         })
     }
 
-    prevStep = () => {
+    prevStep = (e) => {
+        e.preventDefault();
         this.setState({
             step: this.state.step - 1
         })
@@ -35,53 +49,42 @@ export default class MainContainer extends Component {
     }
 
     addGenreHandler = (e) => {
-        this.setState({
-            genre: e.target.name,
-            activeGenre: e.target.name
-        })
+        this.props.addGenre(e.target.name);
     }
 
     addSubgenreHandler = (e) => {
-        this.setState({
-            subgenre: e.target.value,
-            activeSubgenre: e.target.value
-        })
+        this.props.addSubgenre(e.target.value);
     }
 
     render() {
-        const {step, genre, subgenre} = this.state;
+        const {step} = this.state;
+        const {subGenre} = this.props;
         return (
-            <div className={step === 4 ? "main-wrapper-long" : "main-wrapper"}>
+            <div className={step >= 3 ? "main-wrapper-long" : "main-wrapper"}>
                 <h5>Add book - New book</h5>
                 <div className="stepContainer">
                     <ul className="stepProgress">
-                        <li className={this.state.step === 1 ? "activeStep" : ""}>Genre</li>
-                        <li className={this.state.step === 2 ? "activeStep" : ""}>Subgenre</li>
+                        <li className={step === 1 ? "activeStep" : ""}>Genre</li>
+                        <li className={step === 2 ? "activeStep" : ""}>Subgenre</li>
                         {
-                            this.state.step < 3 ?
+                            step < 3 ?
                                 <li className="dots"></li>:
                                 null
                         }
                         {
-                            this.state.step > 2 && this.state.subgenre === "Add new" ?
+                            step > 2 && subGenre === "Add new" ?
                                 <React.Fragment>
-                                    <li className={this.state.step === 3 ? "activeStep" : ""}>Add new subgenre</li>
-                                    <li className={this.state.step === 4 ? "activeStep" : ""}>Information</li>
+                                    <li className={step === 3 ? "activeStep" : ""}>Add new subgenre</li>
+                                    <li className={step === 4 ? "activeStep" : ""}>Information</li>
                                 </React.Fragment> :
-                                <li className={this.state.step === 3 ? "activeStep" : ""}>Information</li>
+                                <li className={step === 3 ? "activeStep" : ""}>Information</li>
                         }
                     </ul>
                 </div>
-                <GenresWrapper step={step} activeGenre={this.addGenreHandler} activeSubgenre={this.addSubgenreHandler} genre={genre} subgenre={subgenre} />
-                <div className="prevNextHolder">
-                    {
-                        this.state.step == 1 ?
-                            <Button disabled variant="outline-secondary" className="btn btn-light pl-4 pr-4 pt-3 pb-3 mr-2 mt-4" onClick={this.prevStep}><i className="prevStep"></i>Back</Button> :
-                            <Button variant="outline-secondary" className="btn btn-light pl-4 pr-4 pt-3 pb-3 mr-2 mt-4" onClick={this.prevStep}><i className="prevStep"></i>Back</Button>
-                    }
-                    <Button variant="outline-secondary" className="btn btn-light pl-4 pr-4 pt-3 pb-3 ml-2 mt-4" onClick={this.nextStep}>Next<i className="nextStep"></i></Button>
-                </div>
+                <GenresWrapper step={step} activeGenre={this.addGenreHandler} activeSubgenre={this.addSubgenreHandler} nextStep={this.nextStep} prevStep={this.prevStep}/>
             </div>
         )
     }
 }
+
+export default connect(mapStateToProps, mapDispatchToProps)(MainContainer);

@@ -1,4 +1,4 @@
-.newSegmentWrapper {
+/* .newSegmentWrapper {
     position: relative;
     overflow: hidden;
     width: 100%;
@@ -8,4 +8,26 @@
 .newSegmentContainer {
     display: block;
     width: 100%;
+} */
+
+#box {
+    margin: 0 auto;
+    overflow: auto;
+    padding: 2px;
+    text-align: justify;
+    background: #fff;
+    border-radius: 3px;
+}
+
+.noresize {
+    resize: none;
+    border: none;
+}
+
+#links a{
+    color: #838488;
+}
+
+#prevNextHolder {
+    margin-right: 110px;
 }
