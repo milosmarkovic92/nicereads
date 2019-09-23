@@ -7,7 +7,7 @@ import {connect} from 'react-redux';
 
 const mapStateToProps = state => {
     return {
-        subGenre: state.subGenres
+        subGenre: state.newBook.subGenres
     }
 }
 

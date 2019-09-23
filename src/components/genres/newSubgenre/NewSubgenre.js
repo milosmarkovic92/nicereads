@@ -19,8 +19,8 @@ const mapDispatchToProps = dispatch => {
 
 const mapStateToProps = state => {
   return {
-      subGenreTitle: state.subGenreTitle,
-      subGenreDescription: state.subGenreDescription
+      subGenreTitle: state.newBook.subGenreTitle,
+      subGenreDescription: state.newBook.subGenreDescription
   }
 }
 
