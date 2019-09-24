@@ -129,11 +129,11 @@ class Information extends Component {
                 onChange={onChangeAuthorValue}
                 value={author}
               >
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
+                <option>J.R.R. Tolkien</option>
+                <option>Ivo Andric</option>
+                <option>Mesa Selimovic</option>
+                <option>Stephen King</option>
+                <option>M.J. Arlidge</option>
               </Form.Control>
             </div>
           </div>
@@ -158,11 +158,11 @@ class Information extends Component {
                 onChange={onChangePublisherValue}
                 value={publisher}
               >
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
+                <option>Vulkan</option>
+                <option>Delfi</option>
+                <option>Neko treci</option>
+                <option>Neko cetvrti</option>
+                <option>Laguna</option>
               </Form.Control>
             </div>
           </div>
@@ -197,11 +197,8 @@ class Information extends Component {
                 onChange={onChangeFormatValue}
                 value={format}
               >
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
+                <option>Tvrda korica</option>
+                <option>Meka korica</option>
               </Form.Control>
             </div>
           </div>
@@ -224,11 +221,11 @@ class Information extends Component {
                 onChange={onChangeEditionLanguageValue}
                 value={editionLanguage}
               >
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
+                <option>Engleski</option>
+                <option>Srpski</option>
+                <option>Nemacki</option>
+                <option>Italijanski</option>
+                <option>Spanski</option>
               </Form.Control>
             </div>
           </div>

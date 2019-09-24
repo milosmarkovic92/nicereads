@@ -4,7 +4,7 @@ import subgenres from '../../../js/constants/subgenres.json';
 import {connect} from 'react-redux';
 
 const mapStateToProps = state => {
-    console.log(state)
+    // console.log(state)
     return {
         subGenre: state.newBook.subGenres
     }

@@ -12,7 +12,8 @@ import {
   UPDATE_FORMAT,
   UPDATE_ISBN,
   UPDATE_PAGES_NUMBER,
-  UPDATE_PUBLISHER
+  UPDATE_PUBLISHER,
+  UPDATE_BOOK
 } from "../constants/constants";
 
 export function addGenre(payload) {
@@ -22,20 +23,19 @@ export function addGenre(payload) {
   };
 }
 
-// export const addGenre = (genre) => {
-//     return (dispatch, getState, {getFirebase, getFirestore}) => {
-//         const firestore = getFirestore();
-//         firestore.collection('newBook').add({
-//             // ...genre,
-//             bookGenre: genre,
-//             createdAt: new Date()
-//         }).then(() => {
-//             dispatch({type: ADD_GENRE, genre});
-//         }).catch((error) => {
-//             dispatch({type: 'CREATE_PROJECT_ERROR', error});
-//         })
-//     }
-// };
+export const addBook = (genre) => {
+    return (dispatch, getState, {getFirebase, getFirestore}) => {
+        const firestore = getFirestore();
+        firestore.collection('newBook').add({
+            ...genre,
+            createdAt: new Date()
+        }).then(() => {
+            dispatch({type: UPDATE_BOOK, genre});
+        }).catch((error) => {
+            dispatch({type: 'CREATE_PROJECT_ERROR', error});
+        })
+    }
+};
 
 export function addSubgenre(payload) {
   return {

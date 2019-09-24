@@ -12,7 +12,8 @@ import {
   UPDATE_FORMAT,
   UPDATE_ISBN,
   UPDATE_PAGES_NUMBER,
-  UPDATE_PUBLISHER
+  UPDATE_PUBLISHER,
+  UPDATE_BOOK
 } from "../constants/constants";
 
 const initialState = {
@@ -33,10 +34,10 @@ const initialState = {
 };
 
 function bookReducer(state = initialState, action) {
-  console.log(action);
+  // console.log(action);
   switch (action.type) {
     case UPDATE_GENRE:
-      console.log("genre selected", action.payload);
+      // console.log("genre selected", action.payload);
       return {
         ...state,
         genres: action.payload
@@ -107,6 +108,9 @@ function bookReducer(state = initialState, action) {
         ...state,
         publisher: action.payload
       };
+    case UPDATE_BOOK:
+      console.log(action.genre);
+      return state;
     default:
       return state;
   }

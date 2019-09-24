@@ -60,27 +60,26 @@ class MainContainer extends Component {
     const { step } = this.state;
     const { subGenre } = this.props;
     return (
-        <div className="main-wrapper">
-          <h5>Add book - New book</h5>
-          <div className="stepContainer">
-            <ul className="stepProgress">
-              <li className={step === 1 ? "activeStep" : ""}>Genre</li>
-              <li className={step === 2 ? "activeStep" : ""}>Subgenre</li>
-              {step < 3 ? <li className="dots"></li> : null}
-              {step > 2 && subGenre === "Add new" ? (
-                <React.Fragment>
-                  <li className={step === 3 ? "activeStep" : ""}>
-                    Add new subgenre
-                  </li>
-                  <li className={step === 4 ? "activeStep" : ""}>
-                    Information
-                  </li>
-                </React.Fragment>
-              ) : (
-                <li className={step === 3 ? "activeStep" : ""}>Information</li>
-              )}
-            </ul>
-          </div>
+      <div className="main-wrapper">
+        <h5>Add book - New book</h5>
+        <div className="stepContainer">
+          <ul className="stepProgress">
+            <li className={step === 1 ? "activeStep" : ""}>Genre</li>
+            <li className={step === 2 ? "activeStep" : ""}>Subgenre</li>
+            {step < 3 ? <li className="dots"></li> : null}
+            {step > 2 && subGenre === "Add new" ? (
+              <React.Fragment>
+                <li className={step === 3 ? "activeStep" : ""}>
+                  Add new subgenre
+                </li>
+                <li className={step === 4 ? "activeStep" : ""}>Information</li>
+              </React.Fragment>
+            ) : (
+              <li className={step === 3 ? "activeStep" : ""}>Information</li>
+            )}
+          </ul>
+        </div>
+        {/* <form> */}
           <GenresWrapper
             step={step}
             activeGenre={this.addGenreHandler}
@@ -88,7 +87,8 @@ class MainContainer extends Component {
             nextStep={this.nextStep}
             prevStep={this.prevStep}
           />
-        </div>
+        {/* </form> */}
+      </div>
     );
   }
 }
